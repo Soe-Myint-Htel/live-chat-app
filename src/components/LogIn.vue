@@ -1,0 +1,27 @@
+<template>
+  <h2>Log In</h2>
+  <form @submit.prevent="login">
+      <input type="email" placeholder="email" v-model="email">
+      <input type="password" placeholder="password" v-model="password">
+      <button>Log In</button>
+  </form>
+</template>
+
+<script>
+import { ref } from '@vue/reactivity'
+export default {
+    setup(){
+        let displayName = ref("");
+        let email = ref("");
+        let password = ref("");
+        let login = ()=>{
+
+        }
+        return {displayName, email, password, login}
+    }
+}
+</script>
+
+<style>
+
+</style>
