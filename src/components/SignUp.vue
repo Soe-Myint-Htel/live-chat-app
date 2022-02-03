@@ -1,7 +1,7 @@
 <template>
   <h2>Sign Up</h2>
   <form @submit.prevent="signup">
-      <input type="text" placeholder="displayname" v-model="displayName">
+      <input type="text" placeholder="name" v-model="displayName">
       <input type="email" placeholder="email" v-model="email">
       <input type="password" placeholder="password" v-model="password">
       <button>Sign Up</button>

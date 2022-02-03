@@ -1,12 +1,14 @@
 import firebase from "firebase/app"
 import "firebase/firestore"
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCnNy4FrTJZSBVaTpWbP77keraAGrqeJlo",
-  authDomain: "vue-blog-system-5a2cc.firebaseapp.com",
-  projectId: "vue-blog-system-5a2cc",
-  storageBucket: "vue-blog-system-5a2cc.appspot.com",
-  messagingSenderId: "965074123527",
-  appId: "1:965074123527:web:afdcbc0d1221c79937e3a2"
+  apiKey: "AIzaSyA29PY1oKbENZkr7JvbsyuCVt8KUUxd6mg",
+  authDomain: "live-chat-app-d9412.firebaseapp.com",
+  projectId: "live-chat-app-d9412",
+  storageBucket: "live-chat-app-d9412.appspot.com",
+  messagingSenderId: "810066192736",
+  appId: "1:810066192736:web:76fd913fb12d69d5bc5605",
+  measurementId: "G-VSV0YQE4G1"
 };
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
