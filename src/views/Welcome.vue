@@ -1,7 +1,7 @@
 <template>
   <div class="welcome container">
     <div v-if="showLogin">
-      <log-in></log-in>
+      <log-in @enterChatroom="enterChatroom"></log-in>
       <p>
         Don't have account ?
         <span @click="showLogin = !showLogin">Sign Up</span> here
@@ -9,7 +9,7 @@
       <p></p>
     </div>
     <div v-else>
-      <sign-up></sign-up>
+      <sign-up @enterChatroom="enterChatroom"></sign-up>
       <p>
         Already have account !
         <span @click="showLogin = !showLogin">Log in</span> here
@@ -22,11 +22,16 @@
 import { ref } from "@vue/reactivity";
 import LogIn from "../components/LogIn.vue";
 import SignUp from "../components/SignUp.vue";
+import {useRouter} from "vue-router";
 export default {
   components: { SignUp, LogIn },
   setup() {
     let showLogin = ref(true);
-    return { showLogin };
+    let router = useRouter();
+    let enterChatroom =()=>{
+      router.push({name: "Chatroom"})
+    }
+    return { showLogin, enterChatroom };
   },
 };
 </script>
