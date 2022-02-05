@@ -62,6 +62,5 @@ export default {
 }
 .welcome button {
   margin: 20px auto;
-  background-color: yellowgreen;
 }
 </style>
