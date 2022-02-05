@@ -1,9 +1,9 @@
 <template>
-  <nav>
+  <nav v-if="user">
       <div>
           <p class="error">{{error}}</p>
-          <p>HI display name</p>
-          <p class="email">logged in as email</p>
+          <p>HI {{user.displayName}}</p>
+          <p class="email">logged in as {{user.email}}</p>
       </div>
       <button @click="logout">Log out</button>
   </nav>
@@ -11,10 +11,12 @@
 
 <script>
 import navLogout from "../composables/navLogout"
+import getUser from "../composables/getUser"
 export default {
     setup(){
+        let {user } = getUser();
         let {error, logout} = navLogout();
-        return {error, logout}
+        return {error, logout, user}
     }
 }
 </script>
