@@ -4,7 +4,6 @@ let error = ref(null);
 let logout = async()=>{
     try {
         await auth.signOut();
-        console.log("log out")
     }catch(err){
         error.value = err.message;
     }
