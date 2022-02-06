@@ -14,7 +14,7 @@ export default {
     setup(){
         let message = ref("");
         let {user} = getUser();
-        let {error, addDoc} = useCollection("message"); 
+        let {error, addDoc} = useCollection("messages"); 
 
 
         let handleSubmit = async()=>{
