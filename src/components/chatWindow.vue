@@ -13,14 +13,14 @@
 <script>
 import { ref } from "@vue/reactivity";
 import { db } from "../firebase/config";
-import {formatDistanceToNow } from "date-fns/";
+import { formatDistanceToNow } from "date-fns";
 import { computed } from "@vue/runtime-core";
 export default {
   setup() {
     let messages = ref([]);
     let formattedMessages = computed(() => {
       return messages.value.map((msg) => {
-        let formatTime = formatDistanceToNow(msg.created_at.toDate());
+        let formatTime = formatDistanceToNow(msg.created_at.toDate())
         return { ...msg, created_at: formatTime };
       });
     });
@@ -35,8 +35,8 @@ export default {
         });
         messages.value = results;
       });
-      
-    return { messages, formattedMessages};
+
+    return { messages, formattedMessages };
   },
 };
 </script>
@@ -62,5 +62,9 @@ export default {
 .messages {
   max-height: 400px;
   overflow: auto;
+}
+.title{
+  font-weight: 800;
+  font-size: 20px;
 }
 </style>
